@@ -46,15 +46,15 @@ A simple machine learning project to predict a student's mental health based on 
 
 
 ---
-
+```
 ## 📁 Project Structure
-'''
-.
+
+
 ├── main.py # Main program file
 ├── dummy_dataset.csv # Dataset for training the model
 └── README.md # This file
 
-'''
+```
 ---
 
 ## 🛠 Requirements
