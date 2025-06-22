@@ -6,7 +6,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 class StudentHealthClassifier:
     def __init__(self):
-        self.data="dummy_dataset.csv"
+        self.data="new_data.csv"
         self.train_model()
 
     def getuserinfo(self):
@@ -15,30 +15,33 @@ class StudentHealthClassifier:
         social_hr=int(input("How many hours do you spend getting involved socially daily?: "))
         exc_days=int(input("How many days do you exercise in a week?: "))
         str_levs=int(input("What is your current stress level on a scale of 0-10: "))
-        return sleep_hr,study_hr,social_hr,exc_days,str_levs
-    
+        hap_levs=int(input("How happy were you this week on a scale of 0-10"))
+        anx_level=int(input("How anxious did you feel throughout this week on a scale of 0-10"))
+        return sleep_hr,study_hr,social_hr,exc_days,str_levs,hap_levs,anx_level
+
     def preprocess_data(self):
-        df=pd.read_csv("dummy_dataset.csv")
+        df=pd.read_csv(self.data)
+        df=df.drop(["mental_health_status"],axis=1)
         X=df.iloc[:,1:-1].values
         Y=df.iloc[:,-1].values
         imp=SimpleImputer(missing_values=np.nan,strategy="mean")
         X=imp.fit_transform(X)
         X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.2,random_state=42)
         return X_train,X_test,Y_train,Y_test
-    
+
     def train_model(self):
         X_train,X_test,Y_train,Y_test=self.preprocess_data()
         self.clf=RandomForestClassifier()
         self.clf.fit(X_train,Y_train)
-        #y_pred=clf.predict(X_test) 
-        
+        #y_pred=clf.predict(X_test)
+
         # print(confusion_matrix(Y_test,y_pred))
-        # print(accuracy_score(Y_test,y_pred)) -> 0.727
+        # print(accuracy_score(Y_test,y_pred)) -> 0.9071729957805907
 
     def pred(self):
         pred_data=[self.getuserinfo()]
         pred=self.clf.predict(pred_data)
-        print(f"Your predicted mental health comes out to be: {pred[0]}")
+        print(f"Your predicted mental health comes out to be: {pred[0]} ")
 
 if __name__ == "__main__":
     shc = StudentHealthClassifier()
@@ -58,9 +61,3 @@ if __name__ == "__main__":
                 break
             case _:
                 print(" Invalid choice. Please select 1 or 2.")
-
-
-        
-
-
-
