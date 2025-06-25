@@ -15,6 +15,9 @@ This project is a machine learning-based tool that predicts a student's mental h
 ## Screenshots
 
 ![image](https://github.com/user-attachments/assets/6a94c294-7a23-41c6-a8c7-ad44201cb511)
+![image](https://github.com/user-attachments/assets/3fee0ad4-16cc-4fa3-a74e-5370663d43ba)
+![image](https://github.com/user-attachments/assets/1923d205-4077-4382-bcd3-b561d6a2d985)
+
 
 ## 🧰 Requirements
 
