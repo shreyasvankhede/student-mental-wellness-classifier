@@ -1,74 +1,69 @@
-# 🧠 Student Health Classifier
+# 🧠 Student Mental Health Predictor
 
-A simple machine learning project to predict a student's mental health based on lifestyle habits such as sleep, study time, social activity, exercise, and stress levels. This project uses a Random Forest Classifier to make predictions and takes inputs interactively from the user.
+This project is a machine learning-based tool that predicts a student's mental health status based on lifestyle habits such as sleep, study time, exercise frequency, and emotional states. The model is trained using a Random Forest Classifier and the application is built with Gradio for an interactive web interface.
 
----
+## 🚀 Features
 
-## 📌 Features
-
-- Predicts mental health level (e.g., "Healthy", "Moderate", "Stressed") based on:
+- Predict mental health status based on:
   - Daily sleep hours
   - Daily study hours
-  - Daily social hours
-  - Weekly exercise days
-  - Current stress level (0–10)
-- Uses a `RandomForestClassifier` from scikit-learn
-- Automatic model training from a dataset (`dummy_dataset.csv`)
-- CLI-based menu for user interaction
-- Preprocessing includes missing value handling using `SimpleImputer`
+  - Weekly social and exercise activity
+  - Weekly stress, happiness, and anxiety levels
+- Interactive sliders for easy input
+- Result displayed as both text and GIF-based emotion
+- Built with Gradio + Scikit-learn
 
----
+## 🧰 Requirements
 
-## 🚀 How It Works
-
-1. Loads and preprocesses data from `dummy_dataset.csv`
-2. Trains a Random Forest Classifier
-3. Asks the user for 5 lifestyle-related inputs
-4. Predicts the student's mental health category
-5. Allows repeating predictions via menu
-
----
-
-## 🧪 Sample Run
-
-=== Student Health Prediction Menu ===
-
-    Predict Mental Health
-
-    Exit
-    Enter your choice: 1
-    How many hours do you sleep daily? 6
-    How many hours do you study daily?: 4
-    How many hours do you spend getting involved socially daily?: 2
-    How many days do you exercise in a week?: 3
-    What is your current stress level on a scale of 0–10: 6
-    🧠 Your predicted mental health condition is: Moderate
-
-
----
-```
-## 📁 Project Structure
-
-
-├── main.py # Main program file
-├── dummy_dataset.csv # Dataset for training the model
-└── README.md # This file
-
-```
----
-
-## 🛠 Requirements
-
-- Python 3.8+
-- pandas
-- numpy
-- scikit-learn
-
-Install dependencies using:
+Install dependencies using pip:
 
 ```bash
 pip install -r requirements.txt
+```
 
-Or manually:
+📁 Project Structure
+```
+.
+├── Data/
+│   ├── new_data.csv
+│   └── Images/
+│       ├── happy.gif
+│       ├── apathy.gif
+│       ├── anxious.gif
+│       ├── irritated.gif
+│       └── sad.gif
+├── main.py
+├── requirements.txt
+└── README.md
+```
 
-pip install pandas numpy scikit-learn
+🏁 How to Run
+
+python main.py
+
+A Gradio interface will launch in your browser for you to interact with the model.
+🧠 Model
+
+    Algorithm: Random Forest Classifier
+
+    Input: Numeric lifestyle and emotion scores
+
+    Output: Predicted mental health label + mood GIF
+
+📸 Example Output
+Input Values	Output Prediction
+Sleep: 7 hrs, Study: 5 hrs, ...	"happy" + 😊 GIF
+📜 License
+
+This project is licensed under the MIT License.
+
+
+---
+
+### ✅ `requirements.txt`
+
+```txt
+gradio
+pandas
+numpy
+scikit-learn

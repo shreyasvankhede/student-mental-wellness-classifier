@@ -1,4 +1,4 @@
-name,sleep_hours,study_hours,social_interaction_hours,exercise_days,stress_level,happiness_score_this_week,anxiety_score_this_week,mental_health_status,broader_feeling_categories
+name,sleep_hours,study_hours,social_interaction_days,exercise_days,stress_level,happiness_score_this_week,anxiety_score_this_week,mental_health_status,broader_feeling_categories
 Person_1,6.0,4.0,5.0,4.0,5.0,7.0,3.0,Okay,happy
 Person_2,7.0,3.0,5.0,3.0,5.0,7.0,6.0,Okay,happy
 Person_3,9.0,1.0,1.0,4.0,2.0,8.0,4.0,Neutral,apathy
