@@ -12,6 +12,9 @@ This project is a machine learning-based tool that predicts a student's mental h
 - Interactive sliders for easy input
 - Result displayed as both text and GIF-based emotion
 - Built with Gradio + Scikit-learn
+## Screenshots
+
+![image](https://github.com/user-attachments/assets/6a94c294-7a23-41c6-a8c7-ad44201cb511)
 
 ## 🧰 Requirements
 
